@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="../Ex3" method="get">
+		<table>
+			<caption>로그인 테이블</caption>
+			<colgroup>
+				<col width="50px"/>
+				<col width="*"/>
+			</colgroup>
+			<tbody>
+				<tr>
+					<td>
+						<label for="s_id">아이디:</label>
+					</td>
+					<td>
+						<input type="text" id="s_id" name="u_id"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="s_pw">비밀번호:</label>
+					</td>
+					<td>
+						<input type="password" id="s_pw" name="u_pw"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" id="login_btn">로그인</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	$(function(){
+		//로그인 버튼을 클릭했을 때 이벤트 적용
+		$("#login_btn").bind("click",function(){
+			//사용자가 입력한 아이디와 비밀번호를 가져온다.
+			//(s_id, s_pw)
+			var id = $("#s_id").val();
+			var pw = $("#s_pw").val();
+			
+			if(id.trim().length <= 0){
+				alert("아이디를 입력하세요");
+				$("#s_id").focus();
+				return;
+			}
+			if(pw.trim().length <= 0){
+				alert("비밀번호를 입력하세요");
+				$("#s_pw").focus();
+				return;
+			}
+			
+			//현재 영역은 id와 pw 모두 입력이 된 상태다.
+			//이제 현재문서(document)에 있는 폼들(forms) 중
+			//첫번째 폼(forms[0])을 서버로 보낸다.
+			document.forms[0].submit();
+		});
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+

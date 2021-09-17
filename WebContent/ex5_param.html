@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Ex5" method="post">
+		<label for="f_name">친구들:</label><br/>
+		<input type="text" id="f_name" name="f_name" value=""/><br/>
+		<input type="text" id="f_name1" name="f_name" value=""/><br/>
+		<input type="text" id="f_name2" name="f_name" value=""/><br/>
+		<input type="text" id="f_name3" name="f_name" value=""/><br/>
+		<input type="text" id="f_name4" name="f_name" value=""/><br/>
+		
+		<label>사는곳:</label>
+		<select name="loc" multiple="multiple">
+			<option>::선택하세요::</option>
+			<option value="seoul">서울</option>
+			<option value="kyounggi">경기</option>
+			<option value="inchun">인천</option>
+		</select>
+		
+		<button type="button" id="btn">보내기</button>
+	</form>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(function(){
+			//로그인 버튼을 클릭했을 때 이벤트 적용
+			$("#btn").bind("click",function(){
+				
+				document.forms[0].submit();// 서버로 폼에 있는 데이터를 보낸다.
+			});
+		});
+	</script>
+</body>
+</html>
